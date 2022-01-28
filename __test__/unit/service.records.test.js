@@ -3,6 +3,10 @@ const { getRecords } = require("../../services/records");
 const config = require("config");
 const mongoose = require("mongoose");
 
+const  { TextEncoder, TextDecoder } = require('util');
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+
 beforeAll(() => {
   mongoose.connect(process.env.MONGODB_URL);
 });
