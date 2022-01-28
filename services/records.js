@@ -1,5 +1,6 @@
 const { Record } = require("../models/records");
-const myFunction = async function getRecords(
+
+const getRecords = async function getRecords(
   startDate,
   endDate,
   minCount,
@@ -32,10 +33,12 @@ const myFunction = async function getRecords(
         key: 1,
         createdAt: 1,
         totalCount: 1,
+        //data:{ $slice: ['$data', skip, limit]}
       },
     },
   ]).exec();
 
+  //return (await result).slice(skip, skip+limit);
   return result;
 };
-module.exports.getRecords = myFunction;
+module.exports.getRecords = getRecords;
