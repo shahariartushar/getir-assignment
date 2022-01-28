@@ -10,7 +10,7 @@ module.exports = validateBody = (data) => {
     errors.minCount = "minCount is expected";
   } else {
     if (!validator.isInt(data.minCount.toString())) {
-      errors.minCountType = "type should be integer";
+      errors.minCountType = "minCount type should be integer";
     }
   }
 
@@ -19,7 +19,7 @@ module.exports = validateBody = (data) => {
     errors.maxCount = "maxCount is expected";
   } else {
     if (!validator.isInt(data.maxCount.toString())) {
-      errors.maxCountType = "type should be integer";
+      errors.maxCountType = "maxCount type should be integer";
     }
   }
 
@@ -28,7 +28,7 @@ module.exports = validateBody = (data) => {
     errors.startDate = "startDate is expected";
   } else {
     if (!validator.isISO8601(data.startDate)) {
-      errors.startDateFormat = "format should be YYYY-MM-DD";
+      errors.startDateFormat = "startDate format should be YYYY-MM-DD";
     }
   }
 
@@ -37,7 +37,7 @@ module.exports = validateBody = (data) => {
     errors.endDate = "endDate is expected";
   } else {
     if (!validator.isISO8601(data.endDate)) {
-      errors.endDateFormat = "format should be YYYY-MM-DD";
+      errors.endDateFormat = "endDate format should be YYYY-MM-DD";
     }
   }
 
@@ -55,7 +55,8 @@ module.exports = validateBody = (data) => {
     }
   }
   return {
-    errMessage: Object.keys(errors).length > 0 ? formatErrorMessage(errors) : "",
+    errMessage:
+      Object.keys(errors).length > 0 ? formatErrorMessage(errors) : "",
     isValid: isEmpty(errors),
   };
 };

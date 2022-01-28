@@ -1,18 +1,11 @@
-// var util = require('util');
-// var encoder = new util.TextEncoder('utf-8');
-const  { TextEncoder, TextDecoder } = require('util');
+const { TextEncoder, TextDecoder } = require("util");
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
 const { Record } = require("../models/records");
 
-const getRecords = function getRecords(
-  startDate,
-  endDate,
-  minCount,
-  maxCount
-) {
-  try{
+const getRecords = function getRecords(startDate, endDate, minCount, maxCount) {
+  try {
     const result = Record.aggregate([
       // add 'totalCount' field for sum of counts array value
       {
@@ -44,13 +37,9 @@ const getRecords = function getRecords(
         },
       },
     ]).exec();
-  
+
     //return (await result).slice(skip, skip+limit);
     return result;
-  }
- catch(e)
- {
-
- }
+  } catch (e) {}
 };
 module.exports.getRecords = getRecords;

@@ -19,7 +19,6 @@ describe("test response data", () => {
       maxCount: 3000,
     };
     let result = await getRecords(startDate, endDate, minCount, maxCount);
-    //console.log(result);
     expect(result.length).toBe(0);
   });
   test("should return the correct output for the corrospoding input", async () => {
@@ -30,7 +29,6 @@ describe("test response data", () => {
       maxCount: 3000,
     };
     let result = await getRecords(startDate, endDate, minCount, maxCount);
-    //console.log(result);
     expect(result.length).toBeGreaterThanOrEqual(1);
   });
 });
