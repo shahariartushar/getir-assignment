@@ -55,7 +55,7 @@ module.exports = validateBody = (data) => {
     }
   }
   return {
-    errMessage: formatErrorMessage(errors),
+    errMessage: Object.keys(errors).length > 0 ? formatErrorMessage(errors) : "",
     isValid: isEmpty(errors),
   };
 };
