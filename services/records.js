@@ -1,5 +1,5 @@
-var util = require('util');
-var encoder = new util.TextEncoder('utf-8');
+// var util = require('util');
+// var encoder = new util.TextEncoder('utf-8');
 const  { TextEncoder, TextDecoder } = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
