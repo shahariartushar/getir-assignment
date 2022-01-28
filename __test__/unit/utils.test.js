@@ -11,7 +11,7 @@ describe("test validate-request functionality", () => {
       maxCount: null,
     };
     expect(validateRequest(input).errMessage).toBe(
-      "Error occured. Reason(s)- minCount : minCount is expected && maxCount : maxCount is expected && startDate : startDate is expected && endDate : endDate is expected"
+      "Error occured. Reason(s)- minCount is expected && maxCount is expected && startDate is expected && endDate is expected"
     );
   });
   test("should return specific error message for the incorrect input", () => {
@@ -22,7 +22,7 @@ describe("test validate-request functionality", () => {
       maxCount: 300,
     };
     expect(validateRequest(input).errMessage).toBe(
-      "Error occured. Reason(s)- dateComapre : endDate should be after startDate && countCompare : maxCount should be greater than minCount"
+      "Error occured. Reason(s)- endDate should be after startDate && maxCount should be greater than minCount"
     );
   });
   test("should return specific error message for the invalid input", () => {
@@ -33,7 +33,7 @@ describe("test validate-request functionality", () => {
       maxCount: "300",
     };
     expect(validateRequest(input).errMessage).toBe(
-      "Error occured. Reason(s)- startDateFormat : format should be YYYY-MM-DD && endDateFormat : format should be YYYY-MM-DD && countCompare : maxCount should be greater than minCount"
+      "Error occured. Reason(s)- format should be YYYY-MM-DD && format should be YYYY-MM-DD && maxCount should be greater than minCount"
     );
   });
 });
