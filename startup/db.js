@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
+const config = require("config");
+
 module.exports = function () {
-  const dbUri =
-    "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true";
-  mongoose
-    .connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log(`Connected to ${dbUri}...`));
+    mongoose
+    .connect(mongoose.connect(config.get('db')), { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log(`Connected to ${dbUri}...`)).catch((e) => {throw new Error(e)});
 };

@@ -1,4 +1,5 @@
 module.exports = formatErrorMessage = (data) => {
+  //console.log(data);
   var errorString = JSON.stringify(data);
   var errorMessage =
     "Error occured. Reason(s)- " +
