@@ -4,7 +4,7 @@ const config = require("config");
 const mongoose = require("mongoose");
 
 beforeAll(() => {
-  mongoose.connect(config.get("db"));
+  mongoose.connect(process.env.MONGODB_URL);
 });
 afterAll(async () => {
   await mongoose.connection.close();
