@@ -1,3 +1,9 @@
+var util = require('util');
+var encoder = new util.TextEncoder('utf-8');
+const  { TextEncoder, TextDecoder } = require('util');
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+
 const { Record } = require("../models/records");
 
 const getRecords = function getRecords(
@@ -44,7 +50,7 @@ const getRecords = function getRecords(
   }
  catch(e)
  {
-   
+
  }
 };
 module.exports.getRecords = getRecords;
