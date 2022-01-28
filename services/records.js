@@ -1,6 +1,6 @@
 const { Record } = require("../models/records");
 
-const getRecords = async function getRecords(
+const getRecords = function getRecords(
   startDate,
   endDate,
   minCount,
